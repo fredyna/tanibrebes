@@ -1,0 +1,5 @@
+@include('templates.partials._header')
+@include('templates.partials._sidebar')
+@include('templates.partials._topbar')
+@yield('content')
+@include('templates.partials._footer')
