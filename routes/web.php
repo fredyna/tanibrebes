@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "hai putri";
+});
+
+Route::get('/home', function () {
+    return view('home');
 });
