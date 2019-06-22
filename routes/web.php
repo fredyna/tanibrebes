@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return "hai putri";
+//front page
+Route::get('/', 'HomeController@index');
+
+Auth::routes();
+Route::get('/home', function () {
+    return redirect()->route('admin');
 });
 
-Route::get('/home', function () {
-    return view('home');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@index');
 });

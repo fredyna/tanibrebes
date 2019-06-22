@@ -10,7 +10,7 @@
           content="admin, yypi, yayasan pengembangan islam">
     <meta name="author" content="Fredy Nur Apriyanto">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Web Title</title>
+    <title>Tani Brebes</title>
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('app-assets/img/ico/apple-icon-60.png') }}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('app-assets/img/ico/apple-icon-76.png') }}">
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('app-assets/img/ico/apple-icon-120.png') }}">
