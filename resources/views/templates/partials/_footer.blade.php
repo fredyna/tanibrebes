@@ -15,13 +15,12 @@
 <script src="{{ asset('app-assets/vendors/js/screenfull.min.js') }}"></script>
 <script src="{{ asset('app-assets/vendors/js/pace/pace.min.js') }}"></script>
 <!-- BEGIN VENDOR JS-->
-<!-- BEGIN PAGE VENDOR JS-->
-<script src="{{ asset('app-assets/vendors/js/chartist.min.js') }}"></script>
-<!-- END PAGE VENDOR JS-->
 <!-- BEGIN CONVEX JS-->
 <script src="{{ asset('app-assets/js/app-sidebar.js') }}"></script>
 <script src="{{ asset('app-assets/js/notification-sidebar.js') }}"></script>
+<script src="app-assets/vendors/js/datatable/datatables.min.js"></script>
 <!-- END CONVEX JS-->
+@include('sweetalert::alert')
 @yield('js')
 </body>
 </html>

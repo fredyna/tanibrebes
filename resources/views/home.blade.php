@@ -131,12 +131,7 @@
         <div class="container">
           <header class="section-header">
             <h3 class="jalur-prestasi">Tentang Kami</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p>{{ $about->description ? $about->description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }}</p>
           </header>
         </div>
       </section>
@@ -155,7 +150,7 @@
             <div class="col-md-3 wow fadeInLeft">
               <div class="product-col">
                 <div class="img">
-                  <img src="{{asset('front-assets/img/image3.jpg')}}" alt="" class="img-fluid" />
+                  <img src="{{asset('front-assets/img/default-product.jpg')}}" alt="" class="img-fluid" />
                 </div>
                 <h2>Bawang Merah</h2>
                 <p>Kelompok Tani</p>

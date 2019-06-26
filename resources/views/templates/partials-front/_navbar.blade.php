@@ -10,6 +10,7 @@
                 <li><a href="#">Data Tani</a></li>
                 <li><a href="#product">Produk Unggulan</a></li>
                 <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
             </ul>
         </nav>
     </div>

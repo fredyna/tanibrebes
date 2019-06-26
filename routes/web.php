@@ -14,11 +14,20 @@
 //front page
 Route::get('/', 'HomeController@index');
 
-Auth::routes();
+//Route Manual auth
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+// Auth::routes(['register' => false]);
+
 Route::get('/home', function () {
     return redirect()->route('admin');
 });
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'AdminController@index')->name('admin');
+    Route::resource('/about', 'AboutController')
+        ->except(['create', 'edit', 'update']);
 });
+
+Route::resource('tani', 'TaniController');

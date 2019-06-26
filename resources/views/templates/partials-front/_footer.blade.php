@@ -18,10 +18,9 @@
             <div class="col-lg-6 col-md-6 footer-contact">
             <h4>Kontak Kami</h4>
             <p>
-                Jl. Halmahera No.KM. 01, Mintaragen, Kec. Tegal Tim., Kota
-                Tegal, Jawa Tengah 52121<br />
-                <strong>Phone:</strong> +62 856 4025 1605 <br />
-                <strong>Email:</strong> contoh@gmail.com<br />
+                {{ $about->address ? $about->address:'Jl. Halmahera No.KM. 01, Mintaragen, Kec. Tegal Tim., Kota Tegal, Jawa Tengah 52121' }}<br />
+                <strong>Phone:</strong> {{ $about->phone ? $about->phone:'+62 856 4025 1605' }} <br />
+                <strong>Email:</strong> {{ $about->email ? $about->email:'admin@gmail.com' }}<br />
             </p>
             </div>
         </div>

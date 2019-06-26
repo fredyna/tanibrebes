@@ -22,12 +22,11 @@
                     <p class="d-none">User Settings</p></a>
                     <div aria-labelledby="dropdownBasic3" class="dropdown-menu dropdown-menu-right">
                     <div class="arrow_box_right">
-                        <a href="javascript:void(0)" class="dropdown-item py-1">
-                            <i class="ft-settings mr-2"></i><span>Settings</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="javascript:void(0);" class="dropdown-item">
+                        <a href="javascript:void(0);" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="ft-power mr-2"></i><span>Logout</span>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </a>
                     </div>
                     </div>
