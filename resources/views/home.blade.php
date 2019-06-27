@@ -2,6 +2,24 @@
 
 @section('content')
 
+<header id="header">
+    <div class="container-fluid">
+        <div id="logo" class="pull-left">
+            <a href="#intro" class="scrollto"><img src="{{asset('img/logo/tanibrebes.png')}}"/></a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li id="menu-home" class="active"><a href="{{ route('home') }}">Beranda</a></li>
+                <li id="menu-tani"><a href="{{ route('tani') }}">Data Tani</a></li>
+                <li><a href="#product">Produk Unggulan</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 <!--==========================
     Intro Section
   ============================-->
@@ -162,14 +180,17 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="col-12 text-center">
+                    <a href="{{ route('product') }}" class="btn-semua-produk">Lihat Semua Produk</a>
+                </div>
               @else
-
+                <div class="col-12 text-center" style="padding:100px;">
+                    <p class="text-center"><i>Tidak Ada Produk</i></p>
+                </div>
               @endif
 
 
-            <div class="col-12 text-center">
-                <a href="{{ route('product') }}" class="btn-semua-produk">Lihat Semua Produk</a>
-            </div>
+
           </div>
         </div>
       </section>
@@ -203,8 +224,12 @@
 
 @endsection
 
-@section('js')
-    <script>
-        $("#menu-home").addClass('active');
-    </script>
+@section('css')
+
+<style>
+    #product{
+        background: url("{{asset('front-assets/img/intro-carousel/2.jpg')}}") center top no-repeat fixed;
+    }
+</style>
+
 @endsection

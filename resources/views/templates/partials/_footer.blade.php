@@ -18,7 +18,7 @@
 <!-- BEGIN CONVEX JS-->
 <script src="{{ asset('app-assets/js/app-sidebar.js') }}"></script>
 <script src="{{ asset('app-assets/js/notification-sidebar.js') }}"></script>
-<script src="app-assets/vendors/js/datatable/datatables.min.js"></script>
+<script src="{{ asset('app-assets/vendors/js/datatable/datatables.min.js') }}"></script>
 <!-- END CONVEX JS-->
 @include('sweetalert::alert')
 @yield('js')

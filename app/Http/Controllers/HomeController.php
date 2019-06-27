@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\About;
 use App\Product;
+use App\Tani;
 
 class HomeController extends Controller
 {
@@ -20,5 +21,12 @@ class HomeController extends Controller
         $data['about']  = About::get()->first();
         $data['products'] = Product::orderBy('created_at', 'desc')->paginate(12);
         return view('product')->with($data);
+    }
+
+    public function tani()
+    {
+        $data['tanis'] = Tani::all();
+        $data['about']  = About::get()->first();
+        return view('tani')->with($data);
     }
 }
