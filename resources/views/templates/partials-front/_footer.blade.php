@@ -69,5 +69,6 @@
 
     <!-- Template Main Javascript File -->
     <script src="{{ asset('front-assets/js/main.js')}}"></script>
+    @yield('js')
   </body>
 </html>

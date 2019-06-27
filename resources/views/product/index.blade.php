@@ -28,6 +28,7 @@
                                                 <div class="col-md-8">
                                                     <select id="select_tani" class="form-control">
                                                         <option value="" style="display:none;">--Pilih Kelompok Tani--</option>
+                                                        <option value="">-- Semua Produk--</option>
                                                         @if (!empty($tani_id))
                                                             @foreach ($tanis as $tani)
                                                                 <option value="{{$tani->id}}" {{ $tani->id == $tani_id ? 'selected':'' }}>{{ $tani->nama }}</option>
@@ -79,7 +80,7 @@
                                                                 <i class="fa fa-trash font-medium-3 mr-2"></i>
                                                             </a>
 
-                                                            <form id="product-{{ $product->id }}" action="{{ route('tani.destroy', $product->id) }}" method="post" style="display:none;">
+                                                            <form id="product-{{ $product->id }}" action="{{ route('product.destroy', $product->id) }}" method="post" style="display:none;">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <input type="hidden" name="idProduct-{{ $product->id }}" value="">

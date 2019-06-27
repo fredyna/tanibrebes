@@ -6,8 +6,8 @@
         </div>
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-                <li class="active"><a href="index.html">Beranda</a></li>
-                <li><a href="#">Data Tani</a></li>
+                <li id="menu-home"><a href="{{ route('home') }}">Beranda</a></li>
+                <li id="menu-tani"><a href="{{ route('tani') }}">Data Tani</a></li>
                 <li><a href="#product">Produk Unggulan</a></li>
                 <li><a href="#about">Tentang Kami</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>

@@ -243,7 +243,7 @@ h6 {
     background-repeat: no-repeat;
 }
 
-#about.syarat {
+#product.syarat {
     margin: auto;
     width: 50%;
     border: 3px solid green;
@@ -362,7 +362,7 @@ h6 {
     background: #18d26e;
 }
 
-#featured-services .btn-get-started-alur {
+#about .btn-get-started-alur {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -376,7 +376,7 @@ h6 {
     background: #18d26e;
 }
 
-#featured-services .btn-get-started-alur:hover {
+#about .btn-get-started-alur:hover {
     background: #fff;
     color: #18d26e;
 }
@@ -697,15 +697,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Featured Services Section
 --------------------------------*/
 
-#featured-services {
+#about {
     background: #dc9c11;
 }
 
-#featured-services .box {
+#about .box {
     padding: 30px 20px;
 }
 
-#featured-services .box-bg {
+#about .box-bg {
     background-image: linear-gradient(
         0deg,
         #000000 0%,
@@ -714,55 +714,55 @@ body.mobile-nav-active #mobile-nav-toggle {
     );
 }
 
-#featured-services i {
+#about i {
     color: #18d26e;
     font-size: 48px;
     display: inline-block;
     line-height: 1;
 }
 
-#featured-services h4 {
+#about h4 {
     font-weight: 400;
     margin: 15px 0;
     font-size: 18px;
 }
 
-#featured-services h4 a {
+#about h4 a {
     color: #fff;
 }
 
-#featured-services h4.alur {
+#about h4.alur {
     color: #fff;
     text-align: center;
     vertical-align: middle;
 }
 
-#featured-services .btn .btn-warning {
+#about .btn .btn-warning {
     vertical-align: middle;
 }
 
-#featured-services h4 a:hover {
+#about h4 a:hover {
     color: #18d26e;
 }
 
-#featured-services p {
+#about p {
     font-size: 14px;
     line-height: 24px;
     color: #fff;
     margin-bottom: 0;
 }
 
-/* About Us Section
+/* product Us Section
 --------------------------------*/
 
-#about {
+#product {
     /* background: url("../img/intro-carousel/2.jpg") center top no-repeat fixed; */
     background-size: cover;
     padding: 60px 0 40px 0;
     position: relative;
 }
 
-#about::before {
+#product::before {
     content: "";
     position: absolute;
     left: 0;
@@ -773,27 +773,27 @@ body.mobile-nav-active #mobile-nav-toggle {
     z-index: 9;
 }
 
-#about .container {
+#product .container {
     position: relative;
     z-index: 10;
 }
 
-#about .product-col {
+#product .product-col {
     background: #fff;
     border-radius: 0 0 4px 4px;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 20px;
 }
 
-#about .product-col .img {
+#product .product-col .img {
     position: relative;
 }
 
-#about .product-col .img img {
+#product .product-col .img img {
     border-radius: 4px 4px 0 0;
 }
 
-#about .product-col .icon {
+#product .product-col .icon {
     width: 64px;
     height: 64px;
     padding-top: 8px;
@@ -808,22 +808,22 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: 0.3s;
 }
 
-#about .product-col i {
+#product .product-col i {
     font-size: 36px;
     line-height: 1;
     color: #fff;
     transition: 0.3s;
 }
 
-#about .product-col:hover .icon {
+#product .product-col:hover .icon {
     background-color: #fff;
 }
 
-#about .product-col:hover i {
+#product .product-col:hover i {
     color: #18d26e;
 }
 
-#about .product-col h2 {
+#product .product-col h2 {
     color: #000;
     text-align: left;
     font-weight: 500;
@@ -832,18 +832,18 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin: 20px 20px 0px 20px;
 }
 
-#about .product-col h2 a {
+#product .product-col h2 a {
     color: #000;
 }
 
-#about .product-col p {
+#product .product-col p {
     font-size: 12px;
     line-height: 24px;
     color: #555;
     margin: 0px 20px 0px 20px;
 }
 
-#about .btn-detail-produk {
+#product .btn-detail-produk {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     text-align: center;
@@ -856,12 +856,12 @@ body.mobile-nav-active #mobile-nav-toggle {
     background: #18d26e;
 }
 
-#about .btn-detail-produk:hover {
+#product .btn-detail-produk:hover {
     background: #dc9c11;
     color: #fff;
 }
 
-#about .btn-semua-produk {
+#product .btn-semua-produk {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -875,7 +875,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     background: #18d26e;
 }
 
-#about .btn-semua-produk:hover {
+#product .btn-semua-produk:hover {
     background: #fff;
     color: #18d26e;
 }

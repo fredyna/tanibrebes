@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Tani;
 use App\About;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\File;
 
 class TaniController extends Controller
 {
@@ -102,6 +103,8 @@ class TaniController extends Controller
             $imgName = time() . str_random(22) . '.' . $uploadedFile->getClientOriginalExtension();
             $uploadedFile->move(public_path('img/tani'), $imgName);
 
+            File::delete(public_path('img/tani') . '/' . $tani->logo);
+
             $tani->logo   = $imgName;
         }
 
@@ -118,6 +121,7 @@ class TaniController extends Controller
     {
         $tani = Tani::findOrFail($id);
         if ($tani->delete()) {
+            $tani->products()->delete();
             Alert::success('Hapus Berhasil', 'Sukses Hapus Data');
         } else {
             Alert::error('Hapus Gagal', 'Sukses Hapus Data');

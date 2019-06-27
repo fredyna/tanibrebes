@@ -12,7 +12,7 @@
 */
 
 //front page
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 //Route Manual auth
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -28,7 +28,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
     Route::resource('/about', 'AboutController')
         ->except(['create', 'edit', 'update']);
+    Route::resource('tani', 'TaniController');
+    Route::resource('product', 'ProductController');
 });
 
-Route::resource('tani', 'TaniController');
-Route::resource('product', 'ProductController');
+Route::get('/product', 'HomeController@product')->name('product');
+Route::get('/tani', 'HomeController@tani')->name('tani');

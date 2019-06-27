@@ -26,5 +26,6 @@
     <link href="{{ asset('front-assets/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet" />
     <!-- Main Stylesheet File -->
     <link href="{{ asset('front-assets/css/style.css')}}" rel="stylesheet" />
+    @yield('css')
   </head>
   <body>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Tani;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -18,10 +19,10 @@ class ProductController extends Controller
     {
         $tani_id = $request->get('tani_id');
         if (!empty($tani_id)) {
-            $data['products'] = Product::where('tani_id', $tani_id)->get();
+            $data['products'] = Product::where('tani_id', $tani_id)->orderBy('created_at', 'desc')->get();
             $data['tani_id']  = $tani_id;
         } else
-            $data['products'] = Product::all();
+            $data['products'] = Product::orderBy('created_at', 'desc')->get();
         $data['tanis']  = Tani::all();
         return view('product.index')->with($data);
     }
@@ -79,13 +80,47 @@ class ProductController extends Controller
     {
         $data['tanis']  = Tani::all();
         $data['product'] = Product::findOrFail($id);
-        dd($data);
         return view('product.edit')->with($data);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'tani_id'   => 'required',
+            'nama'      => 'required|min:3:max:100',
+            'kapasitas_produksi' => 'required',
+            'harga_agen' => 'required',
+            'harga_jual' => 'required',
+            'foto'      => 'nullable|image'
+        ]);
+
+        $product = Product::find($id);
+        $product->tani_id = $request->tani_id;
+        $product->nama = $request->nama;
+        $product->kapasitas_produksi = $request->kapasitas_produksi;
+        $product->harga_agen = $request->harga_agen;
+        $product->harga_jual = $request->harga_jual;
+        $product->panjang = $request->panjang;
+        $product->lebar = $request->lebar;
+        $product->tinggi = $request->tinggi;
+
+        if (!empty($request->file('foto'))) {
+            $uploadedFile = $request->file('foto');
+            $imgName = time() . str_random(22) . '.' . $uploadedFile->getClientOriginalExtension();
+            $uploadedFile->move(public_path('img/products'), $imgName);
+
+            File::delete(public_path('img/products') . '/' . $product->foto);
+
+            $product->foto = $imgName;
+        }
+
+        if ($product->save()) {
+            Alert::success('Sukses Update', 'Sukses Update Data');
+            return redirect()->route('product.index');
+        }
+
+        Alert::success('Gagal Update', 'Gagal Update Data');
+        return redirect()->back();
     }
 
     public function destroy($id)

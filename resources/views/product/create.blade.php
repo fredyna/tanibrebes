@@ -21,7 +21,7 @@
                                         @csrf
                                         <div class="form-body">
                                             <h4 class="form-section">
-                                                <i class="icon-users"></i> Tambah Data product</h4>
+                                                <i class="icon-users"></i> Tambah Data Produk</h4>
                                             <div class="form-group row">
                                                 <label class="col-md-3 label-control">Kelompok Tani</label>
                                                 <div class="col-md-9">

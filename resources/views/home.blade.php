@@ -125,9 +125,9 @@
 
     <main id="main">
       <!--==========================
-      Featured Services Section
+      About Section
     ============================-->
-      <section id="featured-services">
+      <section id="about">
         <div class="container">
           <header class="section-header">
             <h3 class="jalur-prestasi">Tentang Kami</h3>
@@ -135,40 +135,48 @@
           </header>
         </div>
       </section>
-      <!-- #featured-services -->
+      <!-- #about-services -->
 
       <!--==========================
-      About Us Section
+      Product Section
     ============================-->
-      <section id="about">
+      <section id="product">
         <div class="container">
           <header class="section-header">
             <h3>Produk Terbaru</h3>
           </header>
 
           <div class="row product-cols">
-            <div class="col-md-3 wow fadeInLeft">
-              <div class="product-col">
-                <div class="img">
-                  <img src="{{asset('front-assets/img/default-product.jpg')}}" alt="" class="img-fluid" />
-                </div>
-                <h2>Bawang Merah</h2>
-                <p>Kelompok Tani</p>
-                <p>Rp30000</p>
-                <a href="#" class="btn-detail-produk">Lihat Produk</a>
-              </div>
-            </div>
+              @if (!empty($products))
+                @foreach ($products as $product)
+                    <div class="col-md-3 wow fadeInLeft">
+                        <div class="product-col">
+                            <div class="img">
+                                <img src="{{ asset('img/products/'.$product->foto) }}" alt="Foto Produk" class="img-fluid" />
+                            </div>
+                            <h2>{{ $product->nama }}</h2>
+                            <p>{{ $product->tani->nama }}</p>
+                            <p>Harga : Rp {{ number_format($product->harga_jual, 0, ',','.')}}</p>
+                            <p>Kapasitas Produksi : {{ $product->kapasitas_produksi }}</p>
+                            <a href="#" class="btn-detail-produk">Lihat Produk</a>
+                        </div>
+                    </div>
+                @endforeach
+              @else
+
+              @endif
+
 
             <div class="col-12 text-center">
-              <a href="#" class="btn-semua-produk">Lihat Semua Produk</a>
+                <a href="{{ route('product') }}" class="btn-semua-produk">Lihat Semua Produk</a>
             </div>
           </div>
         </div>
       </section>
-      <!-- #about -->
+      <!-- #product -->
 
       <!--==========================
-      Clients Section
+      Partnership Section
     ============================-->
       <section id="clients" class="wow fadeInUp">
         <div class="container">
@@ -190,7 +198,13 @@
           </div>
         </div>
       </section>
-      <!-- #clients -->
+      <!-- #partnership -->
     </main>
 
+@endsection
+
+@section('js')
+    <script>
+        $("#menu-home").addClass('active');
+    </script>
 @endsection
