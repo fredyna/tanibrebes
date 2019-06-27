@@ -31,3 +31,4 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::resource('tani', 'TaniController');
+Route::resource('product', 'ProductController');

@@ -16,7 +16,6 @@ class TaniController extends Controller
 
     public function index()
     {
-        $data['about'] = About::get()->first();
         $data['tanis'] = Tani::all();
         return view('tani.index')->with($data);
     }
@@ -36,7 +35,7 @@ class TaniController extends Controller
             'nomor_hp'          => 'required',
             'jumlah_anggota'    => 'required',
             'kegiatan_rutin'    => 'required',
-            'logo'              => 'required',
+            'logo'              => 'required|image',
         ]);
 
         $uploadedFile = $request->file('logo');
@@ -56,56 +55,74 @@ class TaniController extends Controller
 
         $tani = Tani::create($data);
         if ($tani) {
+            Alert::success('Tambah Berhasil', 'Sukses Tambah Data');
+            return redirect()->route('tani.index');
+        }
+
+        Alert::error('Tambah Gagal', 'Sukses Tambah Data');
+        return redirect()->route('tani.create');
+    }
+
+    public function show($id)
+    {
+        $data['tani'] = Tani::findOrFail($id);
+        return view('tani.show')->with($data);
+    }
+
+    public function edit($id)
+    {
+        $data['tani'] = Tani::findOrFail($id);
+        return view('tani.edit')->with($data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'jenis_organisasi'  => 'required',
+            'nama'              => 'required',
+            'ketua'             => 'required',
+            'address'           => 'required',
+            'nomor_hp'          => 'required',
+            'jumlah_anggota'    => 'required',
+            'kegiatan_rutin'    => 'required',
+            'logo'              => 'nullable|image',
+        ]);
+
+        $tani = Tani::find($id);
+        $tani->jenis_organisasi = $request->jenis_organisasi;
+        $tani->nama             = $request->nama;
+        $tani->ketua            = $request->ketua;
+        $tani->address          = $request->address;
+        $tani->nomor_hp         = $request->nomor_hp;
+        $tani->jumlah_anggota   = $request->jumlah_anggota;
+        $tani->kegiatan_rutin   = $request->kegiatan_rutin;
+
+        if (!empty($request->file('logo'))) {
+            $uploadedFile = $request->file('logo');
+            $imgName = time() . str_random(22) . '.' . $uploadedFile->getClientOriginalExtension();
+            $uploadedFile->move(public_path('img/tani'), $imgName);
+
+            $tani->logo   = $imgName;
+        }
+
+        if ($tani->save()) {
             Alert::success('Update Berhasil', 'Sukses Update Data');
             return redirect()->route('tani.index');
         }
 
         Alert::error('Update Gagal', 'Sukses Update Data');
-        return redirect()->route('tani.create');
+        return redirect()->route('tani.edit', $id);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $tani = Tani::findOrFail($id);
+        if ($tani->delete()) {
+            Alert::success('Hapus Berhasil', 'Sukses Hapus Data');
+        } else {
+            Alert::error('Hapus Gagal', 'Sukses Hapus Data');
+        }
+
+        return redirect()->route('tani.index');
     }
 }

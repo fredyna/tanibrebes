@@ -23,7 +23,7 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    <table id="table-dt" class="table table-striped table-hover">
+                                    <table id="{{ empty($tanis) ? '':'table-dt' }}" class="table table-striped table-hover table-sm">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -44,7 +44,7 @@
                                                         <td>{{ $tani->jenis_organisasi }}</td>
                                                         <td>{{ $tani->ketua }}</td>
                                                         <td>{{ $tani->nomor_hp }}</td>
-                                                        <td>{{ $tani->jumlah_anggota }}</td>
+                                                        <td class="text-right">{{ $tani->jumlah_anggota }}</td>
                                                         <td class="text-center">
                                                             <a href="{{ route('tani.show', $tani->id) }}" class="info p-0" data-original-title="" title="">
                                                                 <i class="fa fa-eye font-medium-3 mr-2"></i>

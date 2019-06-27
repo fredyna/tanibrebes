@@ -8,11 +8,11 @@
     <div class="sidebar-content">
         <div class="nav-container">
         <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-            <li id="menu-dashboard" class="nav-item"><a href="#"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
+            <li id="menu-dashboard" class="nav-item"><a href="{{ route('admin') }}"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
             </li>
             <li id="menu-tani" class="nav-item"><a href="{{ route('tani.index') }}"><i class="icon-users"></i><span data-i18n="" class="menu-title">Kelompok Tani</span></a>
             </li>
-            <li id="menu-product" class="nav-item"><a href="#"><i class="icon-drawer"></i><span data-i18n="" class="menu-title">Data Produk</span></a>
+            <li id="menu-product" class="nav-item"><a href="{{ route('product.index') }}"><i class="icon-drawer"></i><span data-i18n="" class="menu-title">Data Produk</span></a>
             </li>
 
             <li class="has-sub nav-item"><a href="#"><i class="icon-settings"></i><span data-i18n="" class="menu-title">Pengaturan</span></a>
