@@ -46,7 +46,7 @@
                                             <div class="form-group row">
                                                 <label class="col-md-4 label-control">Kapasitas Produksi</label>
                                                 <div class="col-md-8">
-                                                    <input type="text" class="form-control-plaintext" value="{{ $product->kapasitas_produksi }}">
+                                                    <input type="text" class="form-control-plaintext" value="{{ $product->kapasitas_produksi . ' ' . $product->satuan_produksi }}">
                                                 </div>
                                             </div>
 

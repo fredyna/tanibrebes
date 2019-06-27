@@ -60,6 +60,27 @@
                                             </div>
 
                                             <div class="form-group row">
+                                                <label class="col-md-3 label-control">Satuan Produksi</label>
+                                                <div class="col-md-9">
+                                                    <select name="satuan_produksi" class="form-control {{ $errors->has('satuan_produksi') ? 'has-error':'' }}" required>
+                                                        <option value="" style="display:none;">- Pilih Satuan -</option>
+                                                        <option value="ons">ons</option>
+                                                        <option value="kilogram">kilogram</option>
+                                                        <option value="kwintal">kwintal</option>
+                                                        <option value="ton">ton</option>
+                                                        <option value="litter">litter</option>
+                                                        <option value="unit">unit</option>
+                                                        <option value="biji">biji</option>
+                                                        <option value="pcs">pcs</option>
+                                                    </select>
+
+                                                    @if ($errors->has('satuan_produksi'))
+                                                        <p class="text-danger">{{ $errors->first('satuan_produksi') }}</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <label class="col-md-3 label-control">Harga Agen</label>
                                                 <div class="col-md-9">
                                                     <input type="number" class="form-control {{ $errors->has('harga_agen') ? 'has-error':'' }}" name="harga_agen" placeholder="0" min="0" required>

@@ -39,6 +39,7 @@ class ProductController extends Controller
             'tani_id'   => 'required',
             'nama'      => 'required|min:3:max:100',
             'kapasitas_produksi' => 'required',
+            'satuan_produksi' => 'required',
             'harga_agen' => 'required',
             'harga_jual' => 'required',
             'foto'      => 'required|image'
@@ -52,6 +53,7 @@ class ProductController extends Controller
             'tani_id'   => $request->tani_id,
             'nama'      => $request->nama,
             'kapasitas_produksi' => $request->kapasitas_produksi,
+            'satuan_produksi' => $request->satuan_produksi,
             'harga_agen' => $request->harga_agen,
             'harga_jual' => $request->harga_jual,
             'panjang'   => $request->panjang,
@@ -89,6 +91,7 @@ class ProductController extends Controller
             'tani_id'   => 'required',
             'nama'      => 'required|min:3:max:100',
             'kapasitas_produksi' => 'required',
+            'satuan_produksi' => 'required',
             'harga_agen' => 'required',
             'harga_jual' => 'required',
             'foto'      => 'nullable|image'
@@ -98,6 +101,7 @@ class ProductController extends Controller
         $product->tani_id = $request->tani_id;
         $product->nama = $request->nama;
         $product->kapasitas_produksi = $request->kapasitas_produksi;
+        $product->satuan_produksi = $request->satuan_produksi;
         $product->harga_agen = $request->harga_agen;
         $product->harga_jual = $request->harga_jual;
         $product->panjang = $request->panjang;

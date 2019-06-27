@@ -756,7 +756,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 
 #product {
-    /* background: url("../img/intro-carousel/2.jpg") center top no-repeat fixed; */
     background-size: cover;
     padding: 60px 0 40px 0;
     position: relative;
@@ -1726,7 +1725,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
     #header #logo img {
         max-height: 100px;
-        width: 80px;
+        width: 120px;
     }
 
     #intro h2 {

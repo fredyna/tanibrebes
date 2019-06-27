@@ -11,7 +11,7 @@
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <li id="menu-home" class="active"><a href="{{ route('home') }}">Beranda</a></li>
-                <li id="menu-tani"><a href="{{ route('tani') }}">Data Tani</a></li>
+                <li id="menu-tani"><a href="{{ route('home.tani') }}">Data Tani</a></li>
                 <li><a href="#product">Produk Unggulan</a></li>
                 <li><a href="#about">Tentang Kami</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
@@ -165,7 +165,7 @@
           </header>
 
           <div class="row product-cols">
-              @if (!empty($products))
+              @if (!$products && !empty($products))
                 @foreach ($products as $product)
                     <div class="col-md-3 wow fadeInLeft">
                         <div class="product-col">
@@ -176,12 +176,12 @@
                             <p>{{ $product->tani->nama }}</p>
                             <p>Harga : Rp {{ number_format($product->harga_jual, 0, ',','.')}}</p>
                             <p>Kapasitas Produksi : {{ $product->kapasitas_produksi }}</p>
-                            <a href="#" class="btn-detail-produk">Lihat Produk</a>
+                            <a href="{{ route('home.product.show', $product->id) }}" class="btn-detail-produk">Lihat Produk</a>
                         </div>
                     </div>
                 @endforeach
                 <div class="col-12 text-center">
-                    <a href="{{ route('product') }}" class="btn-semua-produk">Lihat Semua Produk</a>
+                    <a href="{{ route('home.product') }}" class="btn-semua-produk">Lihat Semua Produk</a>
                 </div>
               @else
                 <div class="col-12 text-center" style="padding:100px;">

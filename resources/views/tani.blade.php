@@ -10,8 +10,8 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li><a href="{{ route('home') }}">Beranda</a></li>
-                    <li class="active"><a href="{{ route('tani') }}">Data Tani</a></li>
-                    <li><a href="{{ route('product') }}">Produk Unggulan</a></li>
+                    <li class="active"><a href="{{ route('home.tani') }}">Data Tani</a></li>
+                    <li><a href="{{ route('home.product') }}">Produk Unggulan</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="{{ route('login') }}">Login</a></li>
                 </ul>
@@ -30,37 +30,43 @@
           </header>
 
           <div class="row product-cols">
-              @php
-                  $no = 1;
-              @endphp
-              <table id="{{ !empty($tanis) ? 'table-dt':'' }}" class="table table-bordered table-hover table-striped">
-                  <thead class="thead-dark">
-                      <tr>
-                          <th>No</th>
-                          <th>Logo</th>
-                          <th>Nama Kelompok Tani</th>
-                          <th>Jenis Organisasi</th>
-                          <th>Jumlah Anggota</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      @if (!empty($tanis))
-                        @foreach ($tanis as $tani)
-                            <tr class="click-tani" data-href="{{route('tani.show', $tani->id)}}">
-                                <td>{{$no++}}</td>
-                                <td><img src="{{ asset('img/tani/'.$tani->logo) }}" alt="Logo KT" style="width:50px;"></td>
-                                <td>{{ $tani->nama }}</td>
-                                <td>{{ $tani->jenis_organisasi }}</td>
-                                <td class="text-right">{{ $tani->jumlah_anggota }}</td>
-                            </tr>
-                        @endforeach
-                      @else
-                            <tr>
-                                <td colspan="5" class="text-center"><i>Tidak Ada Data</i></td>
-                            </tr>
-                      @endif
-                  </tbody>
-              </table>
+              <div class="table-responsive">
+                  @php
+                      $no = 1;
+                  @endphp
+                  <table id="{{ !empty($tanis) ? 'table-dt':'' }}" class="table table-bordered table-hover table-striped table-responsive">
+                      <thead class="thead-dark">
+                          <tr>
+                              <th>No</th>
+                              <th>Logo</th>
+                              <th>Nama Kelompok Tani</th>
+                              <th>Jenis Organisasi</th>
+                              <th>Jumlah Anggota</th>
+                              <th>Ketua</th>
+                              <th>Kontak</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @if (!empty($tanis))
+                            @foreach ($tanis as $tani)
+                                <tr class="click-tani" data-href="{{route('home.tani.show', $tani->id)}}">
+                                    <td>{{$no++}}</td>
+                                    <td><img src="{{ asset('img/tani/'.$tani->logo) }}" alt="Logo KT" style="width:50px;"></td>
+                                    <td>{{ $tani->nama }}</td>
+                                    <td>{{ $tani->jenis_organisasi }}</td>
+                                    <td class="text-right">{{ $tani->jumlah_anggota }}</td>
+                                    <td class="text-right">{{ $tani->ketua }}</td>
+                                    <td>{{ $tani->nomor_hp }}</td>
+                                </tr>
+                            @endforeach
+                          @else
+                                <tr>
+                                    <td colspan="5" class="text-center"><i>Tidak Ada Data</i></td>
+                                </tr>
+                          @endif
+                      </tbody>
+                  </table>
+              </div>
           </div>
         </div>
       </section>
@@ -80,6 +86,11 @@
         }
         tr:hover{
             cursor: pointer;
+        }
+        @media (max-width: 768px){
+            .product-cols{
+                padding: 0px;
+            }
         }
     </style>
 @endsection

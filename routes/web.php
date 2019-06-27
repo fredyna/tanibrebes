@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('product', 'ProductController');
 });
 
-Route::get('/product', 'HomeController@product')->name('product');
-Route::get('/product/{id}', 'HomeController@showProduct')->name('product.show');
-Route::get('/tani', 'HomeController@tani')->name('tani');
-Route::get('/tani/{id}', 'HomeController@tani')->name('tani.show');
+Route::get('/product', 'HomeController@product')->name('home.product');
+Route::get('/product/{id}', 'HomeController@showProduct')->name('home.product.show');
+Route::get('/tani', 'HomeController@tani')->name('home.tani');
+Route::get('/tani/{id}', 'HomeController@showTani')->name('home.tani.show');

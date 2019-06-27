@@ -65,7 +65,7 @@
                                                         <td>{{ $no++ }}</td>
                                                         <td>{{ $product->nama }}</td>
                                                         <td>{{ $product->tani->nama }}</td>
-                                                        <td class="text-right">{{ $product->kapasitas_produksi }}</td>
+                                                        <td class="text-right">{{ $product->kapasitas_produksi . ' ' . $product->satuan_produksi }}</td>
                                                         <td class="text-center">
                                                             <img src="{{ asset('img/products/'.$product->foto) }}" alt="Foto Produk" style="width: 100px;">
                                                         </td>

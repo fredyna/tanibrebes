@@ -69,6 +69,27 @@
                                             </div>
 
                                             <div class="form-group row">
+                                                <label class="col-md-3 label-control">Satuan Produksi</label>
+                                                <div class="col-md-9">
+                                                    <select name="satuan_produksi" class="form-control {{ $errors->has('satuan_produksi') ? 'has-error':'' }}" required>
+                                                        <option value="" style="display:none;">- Pilih Satuan -</option>
+                                                        <option value="ons" {{ $product->satuan_produksi == 'ons' ? 'selected':'' }}>ons</option>
+                                                        <option value="kilogram" {{ $product->satuan_produksi == 'kilogram' ? 'selected':'' }}>kilogram</option>
+                                                        <option value="kwintal" {{ $product->satuan_produksi == 'kwintal' ? 'selected':'' }}>kwintal</option>
+                                                        <option value="ton" {{ $product->satuan_produksi == 'ton' ? 'selected':'' }}>ton</option>
+                                                        <option value="litter" {{ $product->satuan_produksi == 'litter' ? 'selected':'' }}>litter</option>
+                                                        <option value="unit" {{ $product->satuan_produksi == 'unit' ? 'selected':'' }}>unit</option>
+                                                        <option value="biji" {{ $product->satuan_produksi == 'biji' ? 'selected':'' }}>biji</option>
+                                                        <option value="pcs" {{ $product->satuan_produksi == 'pcs' ? 'selected':'' }}>pcs</option>
+                                                    </select>
+
+                                                    @if ($errors->has('satuan_produksi'))
+                                                        <p class="text-danger">{{ $errors->first('satuan_produksi') }}</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <label class="col-md-3 label-control">Harga Agen</label>
                                                 <div class="col-md-9">
                                                     <input type="number" class="form-control {{ $errors->has('harga_agen') ? 'has-error':'' }}" name="harga_agen" placeholder="0" min="0" value="{{ $product->harga_agen }}" required>
