@@ -165,7 +165,7 @@
           </header>
 
           <div class="row product-cols">
-              @if (!$products && !empty($products))
+              @if (!empty($products) && count($products))
                 @foreach ($products as $product)
                     <div class="col-md-3 wow fadeInLeft">
                         <div class="product-col">

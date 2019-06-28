@@ -59,10 +59,6 @@
                                     <td>{{ $tani->nomor_hp }}</td>
                                 </tr>
                             @endforeach
-                          @else
-                                <tr>
-                                    <td colspan="5" class="text-center"><i>Tidak Ada Data</i></td>
-                                </tr>
                           @endif
                       </tbody>
                   </table>
