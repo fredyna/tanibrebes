@@ -19,7 +19,7 @@
                 <ul class="menu-content" style="">
                     <li id="menu-setting-about" class="is-shown"><a href="{{ route('about.index') }}" class="menu-item">Tentang Kami</a>
                   </li>
-                  <li id="menu-setting-account" class="is-shown"><a href="extended-table.html" class="menu-item">Akun</a>
+                  <li id="menu-setting-account" class="is-shown"><a href="javascript:void(0)" onclick="alert('Menu belum tersedia')" class="menu-item">Akun</a>
                   </li>
                 </ul>
             </li>
