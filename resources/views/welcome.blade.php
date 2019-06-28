@@ -17,7 +17,7 @@
                                 <i class="icon-users info font-large-2 float-left"></i>
                               </div>
                               <div class="media-body text-right">
-                                <h3>0</h3>
+                                <h3>{{$tani_count}}</h3>
                                 <span>Kelompok Tani</span>
                               </div>
                             </div>
@@ -34,7 +34,7 @@
                                 <i class="icon-graph warning font-large-2 float-left"></i>
                               </div>
                               <div class="media-body text-right">
-                                <h3>156</h3>
+                                <h3>{{ $product_count }}</h3>
                                 <span>Jumlah Produk</span>
                               </div>
                             </div>
