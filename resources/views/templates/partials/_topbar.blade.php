@@ -17,7 +17,7 @@
                 <li class="dropdown nav-item mr-0">
                     <a id="dropdownBasic3" href="#" data-toggle="dropdown" class="nav-link position-relative dropdown-user-link dropdown-toggle">
                         <span class="avatar avatar-online">
-                            <img id="navbar-avatar" src="{{ asset('app-assets/img/portrait/small/avatar-s-3.jpg') }}" alt="avatar"/>
+                            <img id="navbar-avatar" src="{{ asset('img/profile/default.png') }}" alt="avatar"/>
                         </span>
                     <p class="d-none">User Settings</p></a>
                     <div aria-labelledby="dropdownBasic3" class="dropdown-menu dropdown-menu-right">
