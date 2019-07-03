@@ -453,7 +453,11 @@ h6 {
     content: "\f105";
 }
 
-.section-header h3.jalur-prestasi {
+#intro .sub-title-header {
+    font-size: 20px;
+}
+
+.section-header .title-about {
     padding-top: 20px;
     font-size: 32px;
     color: #fff;
@@ -462,6 +466,11 @@ h6 {
     font-weight: 700;
     position: relative;
     padding-bottom: 15px;
+}
+
+#about ol li {
+    color: #fff;
+    text-align: justify;
 }
 
 /* Nav Meu Container */

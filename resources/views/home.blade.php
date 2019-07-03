@@ -39,12 +39,9 @@
               </div>
               <div class="carousel-container">
                 <div class="carousel-content">
-                  <h2>We are professional</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <h2>Keunggulan Tani Brebes</h2>
+                  <p class="sub-title-header">
+                    Menyajikan Data Kelompok Tani Kabupaten Brebes Secara Akurat dan Terbaru.
                   </p>
                   <a href="#featured-services" class="btn-get-started scrollto"
                     >Telusuri</a
@@ -58,12 +55,9 @@
               </div>
               <div class="carousel-container">
                 <div class="carousel-content">
-                  <h2>We are professional</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <h2>Keunggulan Tani Brebes</h2>
+                  <p class="sub-title-header">
+                    Membantu Hilirisasi Produk Unggulan Pertanian di Kabupaten Brebes dengan Basis Data Produk yang Siap Dipasarkan.
                   </p>
                   <a href="#featured-services" class="btn-get-started scrollto"
                     >Telusuri</a
@@ -77,12 +71,9 @@
               </div>
               <div class="carousel-container">
                 <div class="carousel-content">
-                  <h2>We are professional</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <h2>Keunggulan Tani Brebes</h2>
+                  <p class="sub-title-header">
+                    Menyajikan Info Pertanian Serta Update Kabar Tani di Wilayah Kabupaten Brebes.
                   </p>
                   <a href="#featured-services" class="btn-get-started scrollto"
                     >Telusuri</a
@@ -96,12 +87,9 @@
               </div>
               <div class="carousel-container">
                 <div class="carousel-content">
-                  <h2>We are professional</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <h2>Keunggulan Tani Brebes</h2>
+                  <p class="sub-title-header">
+                    Bagi Para Pelaku Industri Berbasis Hasil Pertanian Mendapatkan Jejaring dengan Pemasok Hasil Pertanian Secara Langsung dari Petani.
                   </p>
                   <a href="#featured-services" class="btn-get-started scrollto"
                     >Telusuri</a
@@ -148,8 +136,24 @@
       <section id="about">
         <div class="container">
           <header class="section-header">
-            <h3 class="jalur-prestasi">Tentang Kami</h3>
+            <h3 class="title-about">Tentang Kami</h3>
             <p>{{ $about->description ? $about->description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' }}</p>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4 class="title-about">VISI</h4>
+                    <p>Tanibrebes.com situs online bagi petani Kabupaten Brebes yang mandiri dan modern.</p>
+                </div>
+                <div class="col-sm-6">
+                    <h4 class="title-about">MISI</h4>
+                    <ol type=1>
+                        <li>Menggiatkan kemandirian petani dalam memasarkan hasil pertanian.</li>
+                        <li>Menggiatkan modernisasi kegiatan pertanian dan pengolahan hasil pertanian.</li>
+                        <li>Menjadi rujukan informasi hasil pertanian di Kabupaten Brebes.</li>
+                        <li>Menjalin jejaring komunikasi bidang pertanian di Kabupaten Brebes.</li>
+                    </ol>
+                </div>
+            </div>
           </header>
         </div>
       </section>

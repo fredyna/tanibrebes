@@ -24,7 +24,7 @@ class CreateTanisTable extends Migration
             $table->text('kegiatan_rutin');
             $table->string('logo');
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
